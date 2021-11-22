@@ -1,0 +1,164 @@
+<div class="float-end">
+  <button type="button" class="btn btn-primary" (click)="onCreate()">
+    Create
+  </button>
+</div>
+
+<br />
+<br />
+
+<div cdkDropListGroup>
+  <div class="example-container">
+    <div
+      cdkDropList
+      [cdkDropListData]="parkingSlots[0]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div
+        class="example-box"
+        *ngFor="let parkingSlot of parkingSlots[0]"
+        cdkDrag
+      >
+        Id = {{ parkingSlot.id }} <br /><br />
+        Card Number = {{ parkingSlot.holdingId }} <br /><br />
+        Hour Rate = {{ parkingSlot.hourRate }} tk <br />
+
+        <div class="btn-group btn-group-justified">
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onEdit(parkingSlot)"
+          >
+            Edit
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onDelete(parkingSlot)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <div
+      cdkDropList
+      [cdkDropListData]="parkingSlots[1]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div
+        class="example-box"
+        *ngFor="let parkingSlot of parkingSlots[1]"
+        cdkDrag
+      >
+        Id = {{ parkingSlot.id }} <br />
+        <br />
+        Card Number = {{ parkingSlot.holdingId }} <br /><br />
+        Hour Rate = {{ parkingSlot.hourRate }} tk
+        <br />
+
+        <div class="btn-group btn-group-justified">
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onEdit(parkingSlot)"
+          >
+            Edit
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onDelete(parkingSlot)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <div
+      cdkDropList
+      [cdkDropListData]="parkingSlots[2]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div
+        class="example-box"
+        *ngFor="let parkingSlot of parkingSlots[2]"
+        cdkDrag
+      >
+        Id = {{ parkingSlot.id }} <br />
+        <br />
+        Card Number = {{ parkingSlot.holdingId }} <br /><br />
+        Hour Rate = {{ parkingSlot.hourRate }} tk
+        <br />
+
+        <div class="btn-group btn-group-justified">
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onEdit(parkingSlot)"
+          >
+            Edit
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onDelete(parkingSlot)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <div
+      cdkDropList
+      [cdkDropListData]="parkingSlots[3]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div
+        class="example-box"
+        *ngFor="let parkingSlot of parkingSlots[3]"
+        cdkDrag
+      >
+        Id = {{ parkingSlot.id }} <br />
+        <br />
+        Card Number = {{ parkingSlot.holdingId }} <br /><br />
+        Hour Rate = {{ parkingSlot.hourRate }} tk
+        <br />
+
+        <div class="btn-group btn-group-justified">
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onEdit(parkingSlot)"
+          >
+            Edit
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onDelete(parkingSlot)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

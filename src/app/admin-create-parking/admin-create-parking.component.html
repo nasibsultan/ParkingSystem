@@ -1,0 +1,50 @@
+<div class="container">
+  <form [formGroup]="createParkingForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Id</label>
+      <input
+        [class.is-invalid]="
+          createParkingForm.get('id').invalid &&
+          createParkingForm.get('id').touched
+        "
+        formControlName="id"
+        type="number"
+        class="form-control"
+      />
+      <small
+        [class.d-none]="
+          createParkingForm.get('id').valid ||
+          createParkingForm.get('id').untouched
+        "
+        class="text-danger"
+      >
+        Id is required !!!
+      </small>
+    </div>
+    <br />
+    <div class="form-group">
+      <label>Per Hour Charge</label>
+      <input
+        [class.is-invalid]="
+          createParkingForm.get('hourRate').invalid &&
+          createParkingForm.get('hourRate').touched
+        "
+        formControlName="hourRate"
+        type="number"
+        class="form-control"
+      />
+
+      <small
+        [class.d-none]="
+          createParkingForm.get('hourRate').valid ||
+          createParkingForm.get('hourRate').untouched
+        "
+        class="text-danger"
+      >
+        Per Hour Charge is required !!!
+      </small>
+    </div>
+    <hr />
+    <button class="btn btn-primary" type="submit">Save</button>
+  </form>
+</div>

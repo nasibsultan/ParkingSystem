@@ -1,0 +1,52 @@
+<div id="login">
+  <div class="container">
+    <div id="login-row" class="row justify-content-center align-items-center">
+      <div id="login-column" class="col-md-6">
+        <div id="login-box" class="col-md-12">
+          <form
+            id="login-form"
+            class="form"
+            [formGroup]="loginForm"
+            (ngSubmit)="onSubmit()"
+          >
+            <div class="form-group">
+              <label>Username</label>
+              <input
+                [class.is-invalid]="
+                  loginForm.get('userName').invalid &&
+                  loginForm.get('userName').touched
+                "
+                formControlName="userName"
+                type="text"
+                class="form-control"
+              />
+              <small
+                [class.d-none]="
+                  loginForm.get('userName').valid ||
+                  loginForm.get('userName').untouched
+                "
+                class="text-danger"
+                >Username is required</small
+              >
+            </div>
+            <br />
+            <div class="form-group">
+              <label>Password</label>
+              <input
+                [class.is-invalid]="
+                  loginForm.get('password').invalid &&
+                  loginForm.get('password').touched
+                "
+                formControlName="password"
+                type="password"
+                class="form-control"
+              />
+            </div>
+            <hr />
+            <button class="btn btn-primary" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
