@@ -8,26 +8,29 @@
 <br />
 
 <div cdkDropListGroup>
-  <div class="example-container">
+  <div class="slot-container">
     <div
       cdkDropList
       [cdkDropListData]="parkingSlots[0]"
-      class="example-list"
+      class="slot-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div
-        class="example-box"
-        *ngFor="let parkingSlot of parkingSlots[0]"
-        cdkDrag
-      >
+      <div class="slot-box" *ngFor="let parkingSlot of parkingSlots[0]" cdkDrag>
         Id = {{ parkingSlot.id }} <br /><br />
-        Card Number = {{ parkingSlot.holdingId }} <br /><br />
+        Car Parked = {{ parkingSlot.isEmpty == false }} <br /><br />
         Hour Rate = {{ parkingSlot.hourRate }} tk <br />
 
         <div class="btn-group btn-group-justified">
           <button
             type="button"
             class="btn btn-link"
+            (click)="onDetails(parkingSlot)"
+          >
+            Details
+          </button>
+          <button
+            type="button"
+            class="btn btn-link"
             (click)="onEdit(parkingSlot)"
           >
             Edit
@@ -45,25 +48,28 @@
     </div>
   </div>
 
-  <div class="example-container">
+  <div class="slot-container">
     <div
       cdkDropList
       [cdkDropListData]="parkingSlots[1]"
-      class="example-list"
+      class="slot-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div
-        class="example-box"
-        *ngFor="let parkingSlot of parkingSlots[1]"
-        cdkDrag
-      >
+      <div class="slot-box" *ngFor="let parkingSlot of parkingSlots[1]" cdkDrag>
         Id = {{ parkingSlot.id }} <br />
         <br />
-        Card Number = {{ parkingSlot.holdingId }} <br /><br />
+        Car Parked = {{ parkingSlot.isEmpty == false }} <br /><br />
         Hour Rate = {{ parkingSlot.hourRate }} tk
         <br />
 
         <div class="btn-group btn-group-justified">
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onDetails(parkingSlot)"
+          >
+            Details
+          </button>
           <button
             type="button"
             class="btn btn-link"
@@ -84,25 +90,28 @@
     </div>
   </div>
 
-  <div class="example-container">
+  <div class="slot-container">
     <div
       cdkDropList
       [cdkDropListData]="parkingSlots[2]"
-      class="example-list"
+      class="slot-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div
-        class="example-box"
-        *ngFor="let parkingSlot of parkingSlots[2]"
-        cdkDrag
-      >
+      <div class="slot-box" *ngFor="let parkingSlot of parkingSlots[2]" cdkDrag>
         Id = {{ parkingSlot.id }} <br />
         <br />
-        Card Number = {{ parkingSlot.holdingId }} <br /><br />
+        Car Parked = {{ parkingSlot.isEmpty == false }} <br /><br />
         Hour Rate = {{ parkingSlot.hourRate }} tk
         <br />
 
         <div class="btn-group btn-group-justified">
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onDetails(parkingSlot)"
+          >
+            Details
+          </button>
           <button
             type="button"
             class="btn btn-link"
@@ -123,25 +132,28 @@
     </div>
   </div>
 
-  <div class="example-container">
+  <div class="slot-container">
     <div
       cdkDropList
       [cdkDropListData]="parkingSlots[3]"
-      class="example-list"
+      class="slot-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div
-        class="example-box"
-        *ngFor="let parkingSlot of parkingSlots[3]"
-        cdkDrag
-      >
+      <div class="slot-box" *ngFor="let parkingSlot of parkingSlots[3]" cdkDrag>
         Id = {{ parkingSlot.id }} <br />
         <br />
-        Card Number = {{ parkingSlot.holdingId }} <br /><br />
+        Car Parked = {{ parkingSlot.isEmpty == false }} <br /><br />
         Hour Rate = {{ parkingSlot.hourRate }} tk
         <br />
 
         <div class="btn-group btn-group-justified">
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="onDetails(parkingSlot)"
+          >
+            Details
+          </button>
           <button
             type="button"
             class="btn btn-link"

@@ -1,0 +1,18 @@
+<div>
+  Total Income = {{ parkingSlot.totalIncome }}
+  <br />
+  <br />
+  <table id="customers">
+    <tr>
+      <th>Car Id</th>
+      <th>Check In Time</th>
+      <th>Check Out Time</th>
+    </tr>
+
+    <tr *ngFor="let car of parkingSlot.cars">
+      <td>{{ car.id }}</td>
+      <td>{{ car.checkInTime }}</td>
+      <td>{{ car.checkOutTime }}</td>
+    </tr>
+  </table>
+</div>

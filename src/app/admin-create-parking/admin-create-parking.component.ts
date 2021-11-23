@@ -41,7 +41,12 @@ export class AdminCreateParkingComponent {
     this.information.push({
       id: value.id+'',
       hourRate: value.hourRate+'',
-      holdingId: id
+      holdingId: id,
+      isEmpty: true,
+      cars: [],
+      totalIncome: '0',
+      
+
     });
     
     localStorage.setItem(id,JSON.stringify(this.information));

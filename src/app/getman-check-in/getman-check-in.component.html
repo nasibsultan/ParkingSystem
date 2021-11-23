@@ -1,0 +1,26 @@
+<div class="container">
+  <form [formGroup]="checkInForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Car Id</label>
+      <input
+        [class.is-invalid]="
+          checkInForm.get('id').invalid && checkInForm.get('id').touched
+        "
+        formControlName="id"
+        type="number"
+        class="form-control"
+      />
+      <small
+        [class.d-none]="
+          checkInForm.get('id').valid || checkInForm.get('id').untouched
+        "
+        class="text-danger"
+      >
+        Id is required !!!
+      </small>
+    </div>
+    <br />
+
+    <button class="btn btn-primary" type="submit">Save</button>
+  </form>
+</div>

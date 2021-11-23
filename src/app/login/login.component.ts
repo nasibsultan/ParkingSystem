@@ -32,7 +32,10 @@ export class LoginComponent{
       const formValue = this.loginForm.value;
       if(formValue.userName=="admin" && formValue.password=="admin"){
         this.router.navigate(["/admin/home"]);
-      }      
+      }
+      else if(formValue.userName=="getman" && formValue.password=="admin"){
+        this.router.navigate(["/getman/home"]);   
+      }   
       else{
         alert("Username and password doesn't match!!!");
 

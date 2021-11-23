@@ -1,3 +1,5 @@
+import { GetmanCheckInComponent } from './getman-check-in/getman-check-in.component';
+import { GetmanHomeComponent } from './getman-home/getman-home.component';
 import { AdminEditParkingComponent } from './admin-edit-parking/admin-edit-parking.component';
 import { AdminCreateParkingComponent } from './admin-create-parking/admin-create-parking.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
@@ -10,7 +12,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin/home', component: AdminHomeComponent},
   {path: 'admin/create/parking', component: AdminCreateParkingComponent},
-  {path: 'admin/edit/parking', component: AdminEditParkingComponent}
+  {path: 'admin/edit/parking', component: AdminEditParkingComponent},
+  {path: 'getman/home', component: GetmanHomeComponent},
+  {path: 'getman/check/in', component: GetmanCheckInComponent}
 ];
 
 @NgModule({
@@ -18,4 +22,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [LoginComponent,AdminHomeComponent,AdminCreateParkingComponent,AdminEditParkingComponent];
+export const routingComponents = [LoginComponent,AdminHomeComponent,AdminCreateParkingComponent,
+  AdminEditParkingComponent,GetmanHomeComponent,GetmanCheckInComponent];

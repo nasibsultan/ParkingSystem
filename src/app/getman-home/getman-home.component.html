@@ -1,0 +1,127 @@
+<br />
+<br />
+
+<div cdkDropListGroup>
+  <div class="slot-container">
+    <div cdkDropList [cdkDropListData]="parkingSlots[0]" class="slot-list">
+      <div class="slot-box" *ngFor="let parkingSlot of parkingSlots[0]" cdk>
+        Id = {{ parkingSlot.id }} <br /><br />
+        Car Parked = {{ parkingSlot.isEmpty == false }} <br /><br />
+        Hour Rate = {{ parkingSlot.hourRate }} tk <br />
+        <div class="btn-group btn-group-justified">
+          <button
+            [hidden]="parkingSlot.isEmpty == false"
+            type="button"
+            class="btn btn-link"
+            (click)="onCheckIn(parkingSlot)"
+          >
+            Check In
+          </button>
+          <button
+            [hidden]="parkingSlot.isEmpty == true"
+            type="button"
+            class="btn btn-link"
+            (click)="onCheckOut(parkingSlot)"
+          >
+            Check Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slot-container">
+    <div cdkDropList [cdkDropListData]="parkingSlots[1]" class="slot-list">
+      <div class="slot-box" *ngFor="let parkingSlot of parkingSlots[1]" cdk>
+        Id = {{ parkingSlot.id }} <br />
+        <br />
+        Car Parked = {{ parkingSlot.isEmpty == false }} <br /><br />
+        Hour Rate = {{ parkingSlot.hourRate }} tk
+        <br />
+
+        <div class="btn-group btn-group-justified">
+          <button
+            [hidden]="parkingSlot.isEmpty == false"
+            type="button"
+            class="btn btn-link"
+            (click)="onCheckIn(parkingSlot)"
+          >
+            Check In
+          </button>
+          <button
+            [hidden]="parkingSlot.isEmpty == true"
+            type="button"
+            class="btn btn-link"
+            (click)="onCheckOut(parkingSlot)"
+          >
+            Check Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slot-container">
+    <div cdkDropList [cdkDropListData]="parkingSlots[2]" class="slot-list">
+      <div class="slot-box" *ngFor="let parkingSlot of parkingSlots[2]" cdk>
+        Id = {{ parkingSlot.id }} <br />
+        <br />
+        Car Parked = {{ parkingSlot.isEmpty == false }} <br /><br />
+        Hour Rate = {{ parkingSlot.hourRate }} tk
+        <br />
+
+        <div class="btn-group btn-group-justified">
+          <button
+            [hidden]="parkingSlot.isEmpty == false"
+            type="button"
+            class="btn btn-link"
+            (click)="onCheckIn(parkingSlot)"
+          >
+            Check In
+          </button>
+          <button
+            [hidden]="parkingSlot.isEmpty == true"
+            type="button"
+            class="btn btn-link"
+            (click)="onCheckOut(parkingSlot)"
+          >
+            Check Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slot-container">
+    <div cdkDropList [cdkDropListData]="parkingSlots[3]" class="slot-list">
+      <div class="slot-box" *ngFor="let parkingSlot of parkingSlots[3]" cdk>
+        Id = {{ parkingSlot.id }} <br />
+        <br />
+        Car Parked = {{ parkingSlot.isEmpty == false }} <br /><br />
+        Hour Rate = {{ parkingSlot.hourRate }} tk
+        <br />
+
+        <div class="btn-group btn-group-justified">
+          <button
+            [hidden]="parkingSlot.isEmpty == false"
+            type="button"
+            class="btn btn-link"
+            *ngIf="parkingSlot.isEmpty == true"
+            (click)="onCheckIn(parkingSlot)"
+          >
+            Check In
+          </button>
+
+          <button
+            [hidden]="parkingSlot.isEmpty == true"
+            type="button"
+            class="btn btn-link"
+            (click)="onCheckOut(parkingSlot)"
+          >
+            Check Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

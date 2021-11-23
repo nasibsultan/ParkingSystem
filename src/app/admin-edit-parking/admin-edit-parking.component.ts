@@ -59,7 +59,7 @@ export class AdminEditParkingComponent implements OnInit {
       hourRate: value.hourRate+'',
       holdingId: id
     });
-    console.log(this.information);
+    
     localStorage.removeItem(id);
     
     localStorage.setItem(id,JSON.stringify(this.information));

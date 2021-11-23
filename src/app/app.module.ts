@@ -10,6 +10,9 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminCreateParkingComponent } from './admin-create-parking/admin-create-parking.component';
 import { AdminEditParkingComponent } from './admin-edit-parking/admin-edit-parking.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogSlotDetailsComponent } from './dialog-slot-details/dialog-slot-details.component';
+import { GetmanHomeComponent } from './getman-home/getman-home.component';
+import { GetmanCheckInComponent } from './getman-check-in/getman-check-in.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +20,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     AdminHomeComponent,
     AdminCreateParkingComponent,
-    AdminEditParkingComponent
+    AdminEditParkingComponent,
+    DialogSlotDetailsComponent,
+    GetmanHomeComponent,
+    GetmanCheckInComponent
   ],
+  entryComponents:[DialogSlotDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,6 +1,8 @@
+import { DialogSlotDetailsComponent } from './../dialog-slot-details/dialog-slot-details.component';
 import { Component, OnInit } from '@angular/core';
 import { Router,NavigationExtras } from '@angular/router';
 import {CdkDragDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-admin-home',
@@ -10,7 +12,7 @@ import {CdkDragDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-
 export class AdminHomeComponent implements OnInit {
 
   parkingSlots: any =[];
-  constructor(private router: Router) { }
+  constructor(private router: Router,public dialog:MatDialog) { }
   
 
   ngOnInit(): void {
@@ -33,7 +35,10 @@ export class AdminHomeComponent implements OnInit {
         this.parkingSlots[iterator%4].push({
           id: JSON.parse(slotInformation)[0].id,
           hourRate: JSON.parse(slotInformation)[0].hourRate,
-          holdingId: JSON.parse(slotInformation)[0].holdingId
+          holdingId: JSON.parse(slotInformation)[0].holdingId,
+          isEmpty: JSON.parse(slotInformation)[0].isEmpty,
+          cars: JSON.parse(slotInformation)[0].cars,
+          totalIncome: JSON.parse(slotInformation)[0].totalIncome
         })
       }
     }
@@ -52,7 +57,6 @@ export class AdminHomeComponent implements OnInit {
     this.router.navigate(["admin/edit/parking"],navigationExtras);
   }
   onDelete(parkingSlot: any){
-    console.log(parkingSlot.holdingId);
     localStorage.removeItem(parkingSlot.holdingId);
     location.reload();
 
@@ -61,17 +65,49 @@ export class AdminHomeComponent implements OnInit {
   }
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
+
+      console.log(event);
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      console.log(event.container.data.values);
+      if(event.previousIndex>=event.currentIndex){
+        moveItemInArray(event.container.data, event.currentIndex+1,event.previousIndex);
+
+      }else{
+        moveItemInArray(event.container.data,event.currentIndex-1, event.previousIndex);
+      }
     } else {
       transferArrayItem(
         event.previousContainer.data,
-        event.container.data,
+        event.container.data,//current
         event.previousIndex,
         event.currentIndex,
       );
+      if(event.currentIndex+1 == event.container.data.length){
+        console.log('ok');
+        transferArrayItem(
+          event.container.data,//current
+          event.previousContainer.data,
+          event.currentIndex-1,
+          event.previousIndex,
+        );
+
+      }
+      else {
+        transferArrayItem(
+          event.container.data,//current
+          event.previousContainer.data,
+          event.currentIndex+1,
+          event.previousIndex,
+        );
+      }
+      
+      
     }
   }
+  onDetails(parkingSlot: any){
+    this.dialog.open(DialogSlotDetailsComponent, {data: parkingSlot});
+
+  }
+
 
 
 }
